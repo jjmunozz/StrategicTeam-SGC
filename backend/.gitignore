@@ -1,0 +1,7 @@
+# Dependencias
+node_modules/
+__pycache__/
+.env
+
+# Base de datos local (opcional si quieres subirla vacía)
+*.pyc

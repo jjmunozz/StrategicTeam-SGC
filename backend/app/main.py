@@ -32,6 +32,18 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
+    from fastapi.middleware.cors import CORSMiddleware
+
+app = FastAPI()
+
+# Esto da permiso a tu frontend para hablar con el backend
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # En producción podemos ser más específicos
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
     title=settings.APP_NAME,
     version=settings.VERSION,
     description="API para el MVP de Gestión de Calidad ISO 9001:2015 - Ciclo PHVA",
